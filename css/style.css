@@ -1,0 +1,598 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html, body {
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.cabeza {
+    background-color: rgba(0, 0, 0, 0.9);
+
+}
+
+a {
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    position: relative; /* Necesario para el pseudo-elemento */
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+span {
+    font-size: 60px;
+}
+.barra {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.barra a:hover {
+    font-size: 18px;
+    transition: 0.3s ease;
+    font-weight: 900;
+}
+
+.logo img:hover {
+    height: 21.5px;
+    transition: .4s ease-in-out;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.barra-principal a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    transition: width 0.4s ease;
+}
+
+.barra-principal a:hover::after {
+    width: 100%;
+}
+
+
+.barra-principal {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    gap: 10px;
+    
+}
+
+.line {
+    position: fixed;
+    top: 50%;
+    left: 100%;
+    width: 1800px;
+    height: 122px;
+    background-color: black;
+    transform: translateY(-50%);
+}
+
+.proyectos h2 {
+    display: inline-block;
+    margin: 0;
+    padding-right: 10px; /* Espacio entre el texto y la línea */
+}
+
+
+.scrolling-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 3rem;
+    
+    gap: 2rem;
+
+}
+
+.proyecto_flex
+{
+    text-align: center;
+}
+
+
+
+.container {
+    position: relative;
+    padding: 2rem 1rem;
+ 
+}
+
+.container .slider {
+    display: flex;
+    overflow-x: scroll; /* Permite el desplazamiento horizontal */
+    scroll-behavior: smooth;
+    gap: 1rem;
+    -webkit-overflow-scrolling: touch; /* Habilita el desplazamiento suave en dispositivos táctiles */
+
+}
+
+.container .slider::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.container .control 
+{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    object-fit: cover;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity .7s ease;
+}
+
+.container:hover .control {
+    opacity: 1; /* Mostrar al hacer hover en el contenedor */
+   
+}
+.container .prev {
+    left: 50px;
+    top: 50%;
+    transform: translate(-50%, -50px);
+}
+
+.container .next {
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50px);
+}
+
+
+
+.derechos {
+    padding: 1rem 0;
+    background-color: black;
+}
+.derechos_txt {
+    text-align: center;
+    color: white;
+}
+.formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+form {
+    
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.contacto_txt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacto_txt a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.contacto_txt a:hover{
+    color: rgb(208, 255, 191);
+    transition: .3s ease-in-out;
+}
+
+.formulario_flex {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    background-color: white;
+    padding: 20px 14px;
+    margin-bottom: 25px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+
+::placeholder {
+    color: #BFC9F3;
+    font-size: 15px;
+}
+
+:focus{
+    outline: 2px solid rgb(208, 255, 191);
+}
+
+.btn {
+    background-color: #14F9A6;
+    color: #146D31;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #14EA9B;
+    transition: 0.3s ease-in-out;
+}
+
+.sect_contacto
+{
+    background-color: rgb(5, 5, 5);
+    padding: 2rem
+}
+.sect_contacto, h2 h3 p {
+
+    color: white;
+}
+
+.social_tw, img{
+ height: 20px;
+}
+
+.socials_cont {
+    padding-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+}
+.contacto_sect 
+{
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    padding: 2rem 5rem 0 5rem;
+    text-align: center;
+    gap: 2rem;
+
+}
+
+.contactanos a {
+    font-size: 16px;
+}
+
+.contactanos a:hover {
+    font-size: 18px;
+    transition: .3s ease-in-out;
+}
+@media (min-width: 768px) {
+
+    h2 {
+        font-size: 28px;
+    }
+   .barra 
+   {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    padding: 1rem;
+   }
+
+   .nosotros {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.nosotros.visible {
+    opacity: 1;
+}
+   
+   .cuerpo 
+{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+    padding: 0 100px;
+}
+
+    .barra-principal {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+    }
+
+
+.socials {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.barra img {
+    height: 20px;
+}
+
+.cuerpo {
+    background-image: url(../img/head.jpg), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 750px;
+    position: relative;
+    margin-bottom: 2rem;
+    background-blend-mode: overlay; /* Permite mezclar la capa negra con la imagen de fondo */
+}
+.proyecto_flex img
+{
+    height: auto;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.proyectos {
+    position: relative;
+    text-align: left;
+    
+
+}
+
+.proyectos h2 
+{
+ 
+ padding: 0 0 10px 2rem;
+}
+
+.nosotros h2 {
+    text-align: center;
+}
+
+.nosotros_flex {
+
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1rem 10rem;
+    gap: 2rem;
+    align-items: center;
+    text-wrap: wrap;
+
+}
+
+.nosotros_txt {
+    line-height: 2;
+    
+}
+
+.nosotros_txt_1 {
+    padding: 10px 0;
+}
+
+
+.nosotros_img img {
+    height: auto;
+    width: 300px;
+}
+
+.linea {
+    border-top: var(--lnw, 1px) solid rgb(0, 0, 0);
+    box-sizing: border-box;
+     border-radius: 1px;
+    margin-left: 180px;
+    margin-right: 1rem;
+    position: relative;
+    bottom:25px;
+}
+}
+
+
+@media (max-width: 768px)and (orientation:portrait){
+
+    span {
+    font-size: 30px;
+}
+
+    h1 {
+        color: white;
+        text-align: center;
+        font-weight: 900;
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+    }
+    a {
+        font-size: 12px;
+    }
+
+    a:hover {
+        font-size: 16px;
+        transition: .4s ease-in-out;
+    }
+    .logo img 
+    {
+        height: 13px;
+    }
+    .logo img:hover {
+        height: 15px;
+        transition: .4s ease-in-out;
+    }
+
+    .cuerpo 
+    {
+        align-items: center;
+        align-content: center;
+        display: flex;
+        width: 100%;
+    
+    }
+
+    .cuerpo {
+        background-image: url(../img/head.jpg), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 450px;
+        position: relative;
+        margin-bottom: 2rem;
+        background-blend-mode: overlay; /* Permite mezclar la capa negra con la imagen de fondo */
+    }
+    .proyecto_flex img
+    {
+        height: auto;
+        width: 330px;
+        border-radius: 10px;
+    }
+    
+
+    .proyectos {
+        position: relative;
+        text-align: center;    
+    }
+
+    .proyectos h2 {
+        padding: 0 0 10px 0;
+
+    }
+    
+    .nosotros_flex {
+    
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem;
+        gap: 2rem;
+        align-items: center;
+        text-wrap: wrap;
+    
+    }
+    .nosotros_img img {
+        height: auto;
+        width: 300px;
+    }
+
+    .nosotros {
+        opacity: 1;
+        
+    }
+
+    .contacto_sect {
+        display: flex;
+        justify-content: space-between;
+        line-height: 2rem;
+        text-align: center;
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    
+    .nosotros.visible {
+        opacity: 1;
+    }
+    
+    .linea {
+        border-top: var(--lnw, 1px) solid rgb(0, 0, 0);
+        box-sizing: border-box;
+         border-radius: 1px;
+         margin: 0;
+         position: static;
+    }
+
+ 
+    
+}
+
+
+@media (min-width: 600px)and (orientation:portrait){
+    a {
+        color: white;
+        font-size: 12px;
+        font-weight: 100;
+        position: relative; /* Necesario para el pseudo-elemento */
+    }
+
+    .barra a:hover {
+        font-size: 15px;
+        transition: 0.3s ease;
+        font-weight: 900;
+    }
+
+    .logo img{
+        height: 15px;
+        transition: .4s ease-in-out;
+    }
+
+    .logo img:hover {
+        height: 16px;
+        transition: .4s ease-in-out;
+    }
+
+    .nosotros_flex {
+    
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem;
+        gap: 2rem;
+        align-items: center;
+        text-wrap: wrap;
+    
+    }
+    .nosotros_img img {
+        height: auto;
+        width: 400px;
+    }
+
+    .nosotros {
+        opacity: 1;
+        
+    }
+    
+    .nosotros.visible {
+        opacity: 1;
+    }
+
+    .contacto_sect 
+{
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    padding: 2rem 5rem 0 5rem;
+    text-align: center;
+    gap: 2rem;
+
+}
+}
